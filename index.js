@@ -126,7 +126,7 @@ app.post('/api/wilders', (req, res) => {
  // PUT - Toggle a Boolean value
  app.put('/api/wilders/isGirl/:id', (req, res) => {
    const idWilders = req.params.id;
-   connection.query('UPDATE wilders SET isActive = 1-isActive WHERE id = ?', [idWilders], err => {
+   connection.query('UPDATE wilders SET isGirl=1-isGirl WHERE id = ?', [idWilders], err => {
      if (err) {
        console.log(err);
        res.status(500).send('There was an error editing the data');
